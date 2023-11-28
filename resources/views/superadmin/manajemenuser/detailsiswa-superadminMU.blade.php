@@ -9,111 +9,57 @@
         <div class="informasi py-3 px-3">
           
             <table class="table  mt-4">
+              <tr>
             
-                  <tr>
-                    <th>Nama</th>
-                    <td>Kairi rayosdelsol</td>
-                  </tr>    
-                  <tr>
-                    <th>NIS/NISN</th>
-                    <td>123/1234567890</td>
-                  </tr>
-                  <tr>
-                    <th>Tempat Tanggal Lahir</th>
-                    <td>Medan, 21 May 2010</td>
-                  </tr>
-                  <tr>
-                    <th>Jenis Kelamin</th>
-                    <td>Perempuan</td>
-                  </tr>
-                  <tr>
-                    <th>Agama</th>
-                    <td>ISLAM</td>
-                  </tr>
-                  <tr>
-                    <th>Status dalam Keluarga</th>
-                    <td>AK</td>
-                  </tr>
-                  <tr>
-                    <th>Anak Ke</th>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th>Alamat Peserta Didik</th>
-                    <td>Filipina</td>
-                  </tr>
-                  <tr>
-                    <th>Nomor Telepon Rumah</th>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <th>Sekolah Asal</th>
-                    <td>SDN 067255</td>
-                  </tr>
-                  <tr>
-                    <th>Diterima di sekolah ini</th>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>Di Kelas</th>
-                    <td>VII</td>
-                  </tr>
-                  <tr>
-                    <th>Pada Tanggal</th>
-                    <td>11 july 2022</td>
-                  </tr>
-                  <tr>
-                    <th>Nama Orang Tua</th>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <th>a. Ayah</th>
-                    <td>HENDRI SUSANTO</td>
-                  </tr>
-                  <tr>
-                    <th>b. Ibu</th>
-                    <td>MARLINA</td>
-                  </tr>
-                  <tr>
-                    <th>a. Ayah</th>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <th>Alamat Orang Tua</th>
-                    <td>jwnoj</td>
-                  </tr>
-                  <tr>
-                    <th>Nomor Telepon Rumah</th>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <th>Pekerjaan Orang Tua</th>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>a. Ayah</th>
-                    <td>ntahlah</td>
-                  </tr>
-                  <tr>
-                    <th>b.Ibu</th>
-                    <td>cknqlkcnl</td>
-                  </tr>
-                  <tr>
-                    <th>Nama Wali Peserta Didik</th>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <th>Alamat Wali Peserta Didik</th>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <th>Nomor Telepon Rumah</th>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <th>Pekerja Wali Peserta Didik</th>
-                    <td>-</td>
-                  </tr>
+                <th scope="col">NISN</th>
+                <th scope="col">NIPD</th>
+                <th scope="col">Nama_Siswa</th>
+                <th scope="col">Jenis_Kelamin</th>
+                <th scope="col">Tempat_Lahir</th>
+                <th scope="col">Tanggal_Lahir</th>
+                <th scope="col">Agama</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">No_hp</th>
+                <th scope="col">Status dlm Keluarga</th>
+                <th scope="col">Nama_Ayah</th>
+                <th scope="col">Nama_Ibu</th>
+                <th scope="col">Pekerjaan_Ayah</th>
+                <th scope="col">Pekerjaan_Ibu</th>
+                <th scope="col">No_Rek_Bank</th>
+                <th scope="col">Bank_Atas_Nama</th>
+                <th scope="col">Status_Siswa</th>
+                <th scope="col">Sekolah_Asal</th>
+                <th scope="col">Anak_Ke</th>
+            </tr>
+            </thead>
+            
+            <tbody >
+                <tr>
+                    @foreach($siswa as $listsiswa)
+                    <td>{{ $listsiswa->NISN }}</td>
+                    <td>{{ $listsiswa->NIPD }}</td>
+                    <td>{{ $listsiswa->Nama_Siswa }}</td>
+                    <td>{{ $listsiswa->Jenis_Kelamin }}</td>
+                    <td>{{ $listsiswa->Tempat_Lahir }}</td>
+                    <td>{{ $listsiswa->Tanggal_Lahir }}</td>
+                    <td>{{ $listsiswa->Agama }}</td>
+                    <td>{{ $listsiswa->Alamat }}</td>
+                    <td>{{ $listsiswa->No_hp }}</td>
+                    <td>{{ $listsiswa->Status_dlm_Klrg }}</td>
+                    <td>{{ $listsiswa->Nama_Ayah }}</td>
+                    <td>{{ $listsiswa->Nama_Ibu }}</td>
+                    <td>{{ $listsiswa->Pekerjaan_Ayah }}</td>
+                    <td>{{ $listsiswa->Pekerjaan_Ibu }}</td>
+                    <td>{{ $listsiswa->No_Rek_Bank }}</td>
+                    <td>{{ $listsiswa->Bank_Atas_Nama }}</td>
+                    <td>{{ $listsiswa->Status_Siswa }}</td>
+                    <td>{{ $listsiswa->Sekolah_Asal }}</td>
+                </tr>
+                @endforeach
+      
+      
+            
+                  
       
         </table>
         </div>

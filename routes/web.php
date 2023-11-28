@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\LogController;
+use App\Http\Controllers\Kelas;
+use App\Http\Controllers\Siswa;
+use App\Http\Controllers\ptk;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -112,6 +116,7 @@ Route::get('/daftarptk-adminMU', function () {
     return view('admin/manajemenuser/daftarptk-adminMU');
 });
 
+
 Route::get('/detailptk-adminMU', function () {
     return view('admin/manajemenuser/detailptk-adminMU');
 });
@@ -202,53 +207,61 @@ Route::get('/editprofile-admin', function () {
 Route::get('/dashboardsuperadmin', function () {
     return view('superadmin/dashboardsuperadmin');
 });
-
+/*
 Route::get('/daftarkelassiswa-superadminMU', function () {
     return view('superadmin/manajemenuser/daftarkelassiswa-superadminMU');
 });
-
+*/
+/*
 Route::get('/tambahkelas-superadminMU', function () {
     return view('superadmin/manajemenuser/tambahkelas-superadminMU');
 });
-
+*/
+/*
 Route::get('/listsiswa-superadminMU', function () {
     return view('superadmin/manajemenuser/listsiswa-superadminMU');
 });
+*/
 
 Route::get('/tambahsiswa-superadminMU', function () {
     return view('superadmin/manajemenuser/tambahsiswa-superadminMU');
 });
-
+/*
 Route::get('/detailsiswa-superadminMU', function () {
     return view('superadmin/manajemenuser/detailsiswa-superadminMU');
 });
+*/
 
-
+/*
 Route::get('/daftarptk-superadminMU', function () {
     return view('superadmin/manajemenuser/daftarptk-superadminMU');
 });
+*/
 
 Route::get('/tambahptk-superadminMU', function () {
     return view('superadmin/manajemenuser/tambahptk-superadminMU');
 });
 
-
+/*
 Route::get('/detailptk-superadminMU', function () {
     return view('superadmin/manajemenuser/detailptk-superadminMU');
 });
-
+*/
+/*
 Route::get('/daftartu-superadminMU', function () {
     return view('superadmin/manajemenuser/daftartu-superadminMU');
 });
+*/
 
 Route::get('/tambahtu-superadminMU', function () {
     return view('superadmin/manajemenuser/tambahtu-superadminMU');
 });
 
-
+/*
 Route::get('/detailtu-superadminMU', function () {
     return view('superadmin/manajemenuser/detailtu-superadminMU');
 });
+*/
 
 Route::get('/listraporsiswa-superadmin', function () {
     return view('superadmin/listraporsiswa-superadmin');
@@ -310,9 +323,28 @@ Route::get('/audit-superadmin', function () {
     return view('superadmin/audit-superadmin');
 });
 
-Route::get('/log_aktivitas_superadmin', function () {
-    return view('superadmin/log/log_aktivitas_superadmin');
+Route::get('/log_absensi_ekskul', [LogController::class, 'index']);
+Route::get('/log_absensi_kelas', [LogController::class, 'absen_kelas']);
+Route::get('/log_ekskul_siswa', [LogController::class, 'ekskul_siswa']);
+Route::get('/log_ekskul', [LogController::class, 'ekskul']);
+Route::get('/log_guru', [LogController::class, 'guru']);
+Route::get('/log_jadwal_mapel', [LogController::class, 'jadwalmapel']);
+Route::get('/daftarkelassiswa-superadminMU', [Kelas::class, 'index']);
+Route::get('/listsiswa-superadminMU', [Siswa::class, 'index']);
+Route::get('/daftarptk-superadminMU', [ptk::class, 'index']);
+Route::get('/daftartu-superadminMU', [ptk::class, 'listtu']);
+Route::get('/detailptk-superadminMU', [ptk::class, 'ptkdetail']);
+Route::get('/detailsiswa-superadminMU', [Siswa::class, 'siswadetail']);
+Route::get('/detailtu-superadminMU', [ptk::class, 'tudetail']);
+
+Route::get('/tambahkelas-superadminMU', [Kelas::class, 'tambahkelas']); // Ganti 'KelasController@tambah' sesuai dengan method yang kamu gunakan di Controller.
+
+/*
+/*
+Route::get('/log_absensi_ekskul', function () {
+    return view('superadmin/log/log_absensi_ekskul');
 });
+*/
 
 Route::get('/log_guru_superadmin', function () {
     return view('superadmin/log/log_guru_superadmin');

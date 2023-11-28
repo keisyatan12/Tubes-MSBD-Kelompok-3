@@ -17,31 +17,17 @@
 </thead>
 
 <tbody >
-<tr>
-<th scope="row">1</th>
-<td>7-A</td>
-<td><a type="button"  href="/listsiswa-superadminMU"  class="btn btn-warning">Lists Siswa</a></td>
-</tr>
-<tr>
-<th scope="row">2</th>
-<td>7-B </td>
-<td><a type="button" href="/listsiswa-superadminMU"  class="btn btn-warning">Lists Siswa</a></td>
-</tr>
-<tr>
-<th scope="row">3</th>
-<td>7-C</td>
-<th scope="row"><a type="button" href="/listsiswa-superadminMU" class="btn btn-warning" >Lists Siswa </a></th>
-</tr>
-<tr>
-<th scope="row">4</th>
-<td>8-A</td>
-<th scope="row"><a type="button" href="/listsiswa-superadminMU" class="btn btn-warning" >Lists Siswa </a></th>
-</tr>
-<tr>
-<th scope="row">5</th>
-<td>8-B</td>
-<th scope="row"><a type="button" href="/listsiswa-adminMU" class="btn btn-warning" >Lists Siswa </a></th>
-</tr>
+    <tr>
+        @foreach($kelas as $kelaslist)
+        <td>{{ $kelaslist->ID_Kelas }}</td>
+        <td>{{ $kelaslist->Nama_Kelas }}</td>
+        <td><a type="button"  href="/listsiswa-superadminMU"  class="btn btn-warning">Lists Siswa</a></td>
+       
+    </tr>
+    @endforeach
+
+       
+
 </tbody>
 </table>
 </div> 

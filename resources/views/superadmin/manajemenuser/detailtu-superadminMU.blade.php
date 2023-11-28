@@ -8,39 +8,36 @@
     <div class="informasi py-3 px-3">
       
        <table class="table  mt-4">
-       
-             <tr>
-               <th>Nama</th>
-               <td>Kairi rayosdelsol</td>
-             </tr>    
-             <tr>
-               <th>NUPTK</th>
-               <td>-</td>
-             </tr>
-             <tr>
-               <th>Jenis Kelamin</th>
-               <td>ejfwu</td>
-             </tr>
-             <tr>
-               <th>TMT Kerja</th>
-               <td>jreihnwnlg</td>
-             </tr>
-             <tr>
-                <th>Tempat Lahir</th>
-                <td>jreihnwnlg</td>
-              </tr>
-              <tr>
-                <th>Tanggal Lahir</th>
-                <td>jreihnwnlg</td>
-              </tr>
-              <tr>
-                <th>Jenjang Pendidikan</th>
-                <td>jreihnwwcnlg</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Aktif</td>
-              </tr>
+        <tr>
+            
+          <th scope="col">ID_Pegawai</th>
+          <th scope="col">Nama_Pegawai</th>
+          <th scope="col">Jenis_Kelamin</th>
+          <th scope="col">TMT_Kerja</th>
+          <th scope="col">Tempat_Lahir</th>
+          <th scope="col">Tanggal_Lahir</th>
+          <th scope="col">Jenjang_Pendidikan</th>
+          <th scope="col">Status</th>
+          
+      </tr>
+      </thead>
+      
+      <tbody >
+          <tr>
+              @foreach($tu as $tulist)
+              <td>{{ $tulist->ID_Pegawai }}</td>
+              <td>{{ $tulist->Nama_Pegawai }}</td>
+              <td>{{ $tulist->Jenis_Kelamin }}</td>
+              <td>{{ $tulist->TMT_Kerja }}</td>
+              <td>{{ $tulist->Tempat_Lahir }}</td>
+              <td>{{ $tulist->Tanggal_Lahir }}</td>
+              <td>{{ $tulist->Jenjang_Pendidikan }}</td>
+              <td>{{ $tulist->Status }}</td>
+             
+          </tr>
+          @endforeach
+
+             
    </table>
     </div>
    <!-- <button type="button" class="btn btn-secondary mt-3 mb-3" >Print Jadwal</button> -->

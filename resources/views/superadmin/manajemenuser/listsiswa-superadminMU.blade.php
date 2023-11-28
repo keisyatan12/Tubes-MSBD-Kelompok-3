@@ -11,7 +11,6 @@
    <table  class="table text-center table-bordered  mt-4"style="width:900px ;" >
      <thead style="background-color: #748E63; color: #000;" >
        <tr>
-         <th scope="col">No.</th>
          <th scope="col">NAMA</th>
          <th scope="col">NISN</th>
          <th scope="col">Status Keaktifan</th>
@@ -19,104 +18,63 @@
          <th scope="col">AKSI</th>
        </tr>
      </thead>
-     
-     <tbody >
-       <tr>
-         <th scope="row">1</th>
-         <td>Kairi hbvibrevbi</td>
-         <td>21123356</td>
-         <td>Aktif</td>
-         <td><a type="button"  href="/detailsiswa-superadminMU"  class="btn btn-warning">Lihat Detail</a></td>
-         <td>
-          <!-- Button trigger modal -->
-   <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
-       <i class="fa-solid fa-file-pen" style="color: #ffffff;"></i>
-    </button>
+    
+          
+          <tbody >
+              <tr>
+                  @foreach($siswa as $listsiswa)
+                  <td>{{ $listsiswa->Nama_Siswa }}</td>
+                  <td>{{ $listsiswa->NISN }}</td>
+                  <td>{{ $listsiswa->Status_Siswa }}</td>
+                  <td><a type="button"  href="/detailsiswa-superadminMU"  class="btn btn-warning">Lihat Detail</a></td>
+                  <td>
+                    <!-- Button trigger modal -->
+             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                 <i class="fa-solid fa-file-pen" style="color: #ffffff;"></i>
+              </button>
+                  
+                 
+              </tr>
+              @endforeach
+        
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Ubah Status Keaktifan Siswa</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Aktif</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Pindah</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+                <label class="form-check-label" for="inlineRadio3">Tidak Aktif</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" >
+                <label class="form-check-label" for="inlineRadio3">Drop-out</label>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-warning">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ </td>
+ </tr>
  
-    <!-- Modal -->
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-     <div class="modal-content">
-       <div class="modal-header">
-         <h1 class="modal-title fs-5" id="exampleModalLabel">Ubah Status Keaktifan Siswa</h1>
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-       </div>
-       <div class="modal-body">
-           <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-               <label class="form-check-label" for="inlineRadio1">Aktif</label>
-             </div>
-             <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-               <label class="form-check-label" for="inlineRadio2">Pindah</label>
-             </div>
-             <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
-               <label class="form-check-label" for="inlineRadio3">Tidak Aktif</label>
-             </div>
-             <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" >
-               <label class="form-check-label" for="inlineRadio3">Drop-out</label>
-             </div>
-       </div>
-       <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-         <button type="button" class="btn btn-warning">Simpan</button>
-       </div>
-     </div>
-   </div>
- </div>
-</td>
-</tr>
+   
 
-<!-- baris kedua -->
-<tr>
-   <th scope="row">2, dst</th>
-   <td>Kairi hbvibrevbi</td>
-   <td>21123356</td>
-   <td>Aktif</td>
-   <td><a type="button"  href="/detailsiswa-superadminMU"  class="btn btn-warning">Lihat Detail</a></td>
-   <td>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
- <i class="fa-solid fa-file-pen" style="color: #ffffff;"></i>
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
- <div class="modal-header">
-   <h1 class="modal-title fs-5" id="exampleModalLabel">Ubah Status Keaktifan Siswa</h1>
-   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
- </div>
- <div class="modal-body">
-     <div class="form-check form-check-inline">
-         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-         <label class="form-check-label" for="inlineRadio1">Aktif</label>
-       </div>
-       <div class="form-check form-check-inline">
-         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-         <label class="form-check-label" for="inlineRadio2">Pindah</label>
-       </div>
-       <div class="form-check form-check-inline">
-         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
-         <label class="form-check-label" for="inlineRadio3">Tidak Aktif</label>
-       </div>
-       <div class="form-check form-check-inline">
-         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" >
-         <label class="form-check-label" for="inlineRadio3">Drop-out</label>
-       </div>
- </div>
- <div class="modal-footer">
-   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-   <button type="button" class="btn btn-warning">Simpan</button>
- </div>
-</div>
-</div>
-</div>
-</td>
-</tr>    
 
      </tbody>
    </table>
