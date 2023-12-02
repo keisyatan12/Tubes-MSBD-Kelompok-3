@@ -10,4 +10,5 @@ class ptk extends Model
     use HasFactory;
     protected $ptk = 'ptk';
     protected $tu = 'tu';
+    protected $kepala_sekolah = 'kepala_sekolah';
 }

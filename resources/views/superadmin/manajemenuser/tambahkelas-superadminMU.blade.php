@@ -18,6 +18,29 @@ try {
 // Proses form jika dikirimkan
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil data dari form
+    // Ambil data dari form
+$id_kelas = ($_POST['id_kelas']) ? $_POST['id_kelas'] : uniqid();
+$wali_kelas = !empty($_POST['wali_kelas']) ? $_POST['wali_kelas'] : null;
+$nama_kelas = !empty($_POST['nama_kelas']) ? $_POST['nama_kelas'] : null;
+$tingkatan = !empty($_POST['tingkatan']) ? $_POST['tingkatan'] : null;
+$kelompok_kelas = !empty($_POST['kelompok_kelas']) ? $_POST['kelompok_kelas'] : null;
+
+// SQL untuk menambahkan data kelas ke dalam tabel kelas
+$sql = "INSERT INTO kelas (id_kelas, wali_kelas, nama_kelas, tingkatan, kelompok_kelas)
+        VALUES (:id_kelas, :wali_kelas, :nama_kelas, :tingkatan, :kelompok_kelas)";
+
+// Persiapkan statement SQL menggunakan PDO
+$stmt = $conn->prepare($sql);
+
+// Bind parameter ke statement
+$stmt->bindParam(':id_kelas', $id_kelas);
+$stmt->bindParam(':wali_kelas', $wali_kelas);
+$stmt->bindParam(':nama_kelas', $nama_kelas);
+$stmt->bindParam(':tingkatan', $tingkatan);
+$stmt->bindParam(':kelompok_kelas', $kelompok_kelas);
+
+
+/*
     $id_kelas = $_POST['id_kelas'];
     $wali_kelas = $_POST['wali_kelas'];
     $nama_kelas = $_POST['nama_kelas'];
@@ -44,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':nama_kelas', $nama_kelas);
     $stmt->bindParam(':tingkatan', $tingkatan);
     $stmt->bindParam(':kelompok_kelas', $kelompok_kelas);
-
+*/
     // Eksekusi statement
     try {
         $stmt->execute();

@@ -1,7 +1,7 @@
 @extends('layouts.main_superadmin')
 
 @section('container')
-<h1 class="jadwal h3 mb-0 text-gray-800 " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> LOG AKTIVITAS</h1></div><br>
+<h1 class="jadwal h3 mb-0 text-gray-800 " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> LOG STATUS KIP KPS DAN PIP</h1></div><br>
                                        
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -9,50 +9,42 @@
        <div class="table-responsive">
            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                <thead style="background-color: #748E63; color: #000;">
-                   <tr>
-                       <th>User</th>
-                       <th>Keterangan</th>
-                       <th>Table</th>
-                       <th>Tanggal Kegiatan</th>
-                   </tr>
-               </thead>
-               <tbody class="table-group-divider ">
-                   <tr>
-                       <td>Tiger Nixon</td>
-                       <td>System Architect</td>
-                       <td>Edinburgh</td>
-                       <td>61</td>
-                   </tr>
-                   <tr>
-                       <td>Garrett Winters</td>
-                       <td>Accountant</td>
-                       <td>Tokyo</td>
-                       <td>63</td>
-                   </tr>
-                   <tr>
-                       <td>Ashton Cox</td>
-                       <td>Junior Technical Author</td>
-                       <td>San Francisco</td>
-                       <td>66</td>
-                   </tr>
-                   <tr>
-                       <td>Cedric Kelly</td>
-                       <td>Senior Javascript Developer</td>
-                       <td>Edinburgh</td>
-                       <td>22</td>
-                   </tr>
-                   <tr>
-                       <td>Airi Satou</td>
-                       <td>Accountant</td>
-                       <td>Tokyo</td>
-                       <td>33</td>
-                   </tr>
-                   <tr>
-                       <td>Brielle Williamson</td>
-                       <td>Integration Specialist</td>
-                       <td>New York</td>
-                       <td>61</td>
-                   </tr>
+                <tr>
+                    <th>ID_Status</th>
+                    <th>Siswa_ID</th>
+                    <th>Nama_Siswa</th>
+                    <th>Status_KIP</th>
+                    <th>No_KIP</th>
+                    <th>Status_KPS</th>
+                    <th>No_KPS</th>
+                    <th>Status_Eligible_PIP</th>
+                    <th>Alasan_Eligible_PIP</th>
+                    <th>Action</th>
+                    <th>Username</th>
+                    <th>Waktu</th>
+                    
+                    
+                </tr>
+            </thead>
+           <tbody>
+                <tr>
+                 @foreach($log_status_kip_kps_pip as $logkipkpspip)
+                 <td>{{ $logkipkpspip->ID_Status}}</td>
+                 <td>{{ $logkipkpspip->Siswa_ID }}</td>
+                 <td>{{ $logkipkpspip->Nama_Siswa }}</td>
+                 <td>{{ $logkipkpspip->Status_KIP }}</td>
+                 <td>{{ $logkipkpspip->No_KIP }}</td>
+                 <td>{{ $logkipkpspip->Status_KPS }}</td>
+                 <td>{{ $logkipkpspip->No_KPS }}</td>
+                 <td>{{ $logkipkpspip->Status_Eligible_PIP }}</td>
+                 <td>{{ $logkipkpspip->Alasan_Eligible_PIP }}</td>
+                 <td>{{ $logkipkpspip->Action }}</td>
+                 <td>{{ $logkipkpspip->Username }}</td>
+                 <td>{{ $logkipkpspip->Waktu }}</td>
+                 
+                </tr> 
+                @endforeach
+                   
                </tbody>
            </table>
        </div>

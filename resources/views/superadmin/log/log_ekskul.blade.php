@@ -1,7 +1,7 @@
 @extends('layouts.main_superadmin')
 
 @section('container')
-<h1 class="jadwal h3 mb-0 text-gray-800 " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> LOG PERMISSION</h1></div><br>
+<h1 class="jadwal h3 mb-0 text-gray-800 " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> LOG EKSTRAKURIKULER</h1></div><br>
                                        
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -33,8 +33,9 @@
                  <td>{{ $logekskul->Action }}</td>
                  <td>{{ $logekskul->Username }}</td>
                  <td>{{ $logekskul->Waktu }}</td>
-                 @endforeach
+                 
                 </tr>  
+                @endforeach
                </tbody>
            </table>
        </div>

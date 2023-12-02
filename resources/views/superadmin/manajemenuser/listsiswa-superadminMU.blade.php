@@ -6,27 +6,37 @@
                 
 
 <!-- Page Heading -->
-<h1 class="jadwal h3 mb-0 text-gray-800" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> DAFTAR SISWA KELAS (X-Y)</h1></div>
+<h1 class="jadwal h3 mb-0 text-gray-800" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> DAFTAR SISWA</h1></div>
 <div class="tablewali">
    <table  class="table text-center table-bordered  mt-4"style="width:900px ;" >
      <thead style="background-color: #748E63; color: #000;" >
        <tr>
-         <th scope="col">NAMA</th>
+         <th scope="col">NO</th>
          <th scope="col">NISN</th>
-         <th scope="col">Status Keaktifan</th>
-         <th scope="col">Detail  Siswa</th>
-         <th scope="col">AKSI</th>
+         <th scope="col">KELAS</th>
+         <th scope="col">TANGGAL</th>
+         <th scope="col">HADIR</th>
+         <th scope="col">IZIN</th>
+         <th scope="col">ALPA</th>
+         <th scope="col">SAKIT</th>
+         <th scope="col">DETAIL SISWA</th>
+         <th scope="col">EDIT</th>
        </tr>
      </thead>
     
           
           <tbody >
               <tr>
-                  @foreach($siswa as $listsiswa)
-                  <td>{{ $listsiswa->Nama_Siswa }}</td>
-                  <td>{{ $listsiswa->NISN }}</td>
-                  <td>{{ $listsiswa->Status_Siswa }}</td>
-                  <td><a type="button"  href="/detailsiswa-superadminMU"  class="btn btn-warning">Lihat Detail</a></td>
+                  @foreach($absensi_kelas as $listsiswa)
+                  <td>{{ $listsiswa->ID_Absensi }}</td>
+                  <td>{{ $listsiswa->ID_Siswa }}</td>
+                  <td>{{ $listsiswa->Kelas }}</td>
+                  <td>{{ $listsiswa->Tanggal }}</td>
+                  <td>{{ $listsiswa->Hadir }}</td>
+                  <td>{{ $listsiswa->Izin }}</td>
+                  <td>{{ $listsiswa->Alpa }}</td>
+                  <td>{{ $listsiswa->Sakit }}</td>
+                  <td><a type="button"  href="{{ url('/detailsiswa-superadminMU', $listsiswa->NISN) }}"  class="btn btn-warning">Lihat Detail</a></td>
                   <td>
                     <!-- Button trigger modal -->
              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -79,4 +89,5 @@
      </tbody>
    </table>
    </div> 
+
 @endsection

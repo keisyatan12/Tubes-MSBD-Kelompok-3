@@ -1,7 +1,7 @@
 @extends('layouts.main_superadmin')
 
 @section('container')
-<h1 class="jadwal h3 mb-0 text-gray-800 " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> LOG PROFILE</h1></div><br>
+<h1 class="jadwal h3 mb-0 text-gray-800 " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> LOG WALI SISWA</h1></div><br>
                                        
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -9,50 +9,35 @@
        <div class="table-responsive">
            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                <thead style="background-color: #748E63; color: #000;">
-                   <tr>
-                       <th>User</th>
-                       <th>Keterangan</th>
-                       <th>Table</th>
-                       <th>Tanggal Kegiatan</th>
-                   </tr>
-               </thead>
-               <tbody class="table-group-divider ">
-                   <tr>
-                       <td>Tiger Nixon</td>
-                       <td>System Architect</td>
-                       <td>Edinburgh</td>
-                       <td>61</td>
-                   </tr>
-                   <tr>
-                       <td>Garrett Winters</td>
-                       <td>Accountant</td>
-                       <td>Tokyo</td>
-                       <td>63</td>
-                   </tr>
-                   <tr>
-                       <td>Ashton Cox</td>
-                       <td>Junior Technical Author</td>
-                       <td>San Francisco</td>
-                       <td>66</td>
-                   </tr>
-                   <tr>
-                       <td>Cedric Kelly</td>
-                       <td>Senior Javascript Developer</td>
-                       <td>Edinburgh</td>
-                       <td>22</td>
-                   </tr>
-                   <tr>
-                       <td>Airi Satou</td>
-                       <td>Accountant</td>
-                       <td>Tokyo</td>
-                       <td>33</td>
-                   </tr>
-                   <tr>
-                       <td>Brielle Williamson</td>
-                       <td>Integration Specialist</td>
-                       <td>New York</td>
-                       <td>61</td>
-                   </tr>
+                <tr>
+                    <th>ID_Wali</th>
+                    <th>Nama_Wali</th>
+                    <th>Siswa_yang_Diwakilkan</th>
+                    <th>Pekerjaan_Wali</th>
+                    <th>No_Rek_Bank</th>
+                    <th>Bank_Atas_Nama</th>
+                    <th>Action</th>
+                    <th>Username</th>
+                    <th>Waktu</th>
+                    
+                    
+                </tr>
+            </thead>
+           <tbody>
+                <tr>
+                 @foreach($log_wali_siswa as $logwalisiswa)
+                 <td>{{ $logwalisiswa->ID_Wali}}</td>
+                 <td>{{ $logwalisiswa->Nama_Wali }}</td>
+                 <td>{{ $logwalisiswa->Siswa_yang_Diwakilkan }}</td>
+                 <td>{{ $logwalisiswa->Pekerjaan_Wali }}</td>
+                 <td>{{ $logwalisiswa->No_Rek_Bank }}</td>
+                 <td>{{ $logwalisiswa->Action }}</td>
+                 <td>{{ $logwalisiswa->Username }}</td>
+                 <td>{{ $logwalisiswa->Waktu }}</td>
+                 
+                </tr> 
+                @endforeach
+                   
                </tbody>
            </table>
        </div>

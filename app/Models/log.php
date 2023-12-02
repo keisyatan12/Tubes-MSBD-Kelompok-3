@@ -15,6 +15,10 @@ class log extends Model
     protected $log_ekstrakurikuler = 'log_ekstrakurikuler';
     protected $log_guru = 'log_guru';
     protected $log_jadwal_mapel = 'log_jadwal_mapel';
+    protected $log_siswa = 'log_siswa';
+    protected $log_status_kip_kps_pip = 'log_status_kip_kps_pip';
+    protected $log_tata_usaha = 'log_tata_usaha';
+    protected $log_wali_siswa = 'log_wali_siswa';
    
 }
 

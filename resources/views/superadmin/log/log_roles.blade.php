@@ -1,7 +1,7 @@
 @extends('layouts.main_superadmin')
 
 @section('container')
-<h1 class="jadwal h3 mb-0 text-gray-800 " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> LOG PERMISSION</h1></div><br>
+<h1 class="jadwal h3 mb-0 text-gray-800 " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center;"> LOG LIST USER</h1></div><br>
                                        
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -9,50 +9,31 @@
        <div class="table-responsive">
            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                <thead style="background-color: #748E63; color: #000;">
-                   <tr>
-                       <th>User</th>
-                       <th>Keterangan</th>
-                       <th>Table</th>
-                       <th>Tanggal Kegiatan</th>
-                   </tr>
-               </thead>
-               <tbody class="table-group-divider ">
-                   <tr>
-                       <td>Tiger Nixon</td>
-                       <td>System Architect</td>
-                       <td>Edinburgh</td>
-                       <td>61</td>
-                   </tr>
-                   <tr>
-                       <td>Garrett Winters</td>
-                       <td>Accountant</td>
-                       <td>Tokyo</td>
-                       <td>63</td>
-                   </tr>
-                   <tr>
-                       <td>Ashton Cox</td>
-                       <td>Junior Technical Author</td>
-                       <td>San Francisco</td>
-                       <td>66</td>
-                   </tr>
-                   <tr>
-                       <td>Cedric Kelly</td>
-                       <td>Senior Javascript Developer</td>
-                       <td>Edinburgh</td>
-                       <td>22</td>
-                   </tr>
-                   <tr>
-                       <td>Airi Satou</td>
-                       <td>Accountant</td>
-                       <td>Tokyo</td>
-                       <td>33</td>
-                   </tr>
-                   <tr>
-                       <td>Brielle Williamson</td>
-                       <td>Integration Specialist</td>
-                       <td>New York</td>
-                       <td>61</td>
-                   </tr>
+                <tr>
+                    <th>ID_Roles</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Nama_Role</th>
+                    <th>Action</th>
+                    <th>Username</th>
+                    <th>Waktu</th>
+                    
+                    
+                </tr>
+            </thead>
+           <tbody>
+                <tr>
+                 @foreach($log_roles as $logroles)
+                 <td>{{ $logroleassign->ID_Roles}}</td>
+                 <td>{{ $logroleassign->Email }}</td>
+                 <td>{{ $logroleassign->Password }}</td>
+                 <td>{{ $logroleassign->Nama_Role }}</td>
+                 <td>{{ $logroleassign->Action }}</td>
+                 <td>{{ $logroleassign->Username }}</td>
+                 <td>{{ $logroleassign->Waktu }}</td>
+                 
+                </tr> 
+                @endforeach
                </tbody>
            </table>
        </div>

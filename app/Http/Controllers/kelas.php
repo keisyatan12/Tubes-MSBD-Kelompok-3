@@ -36,8 +36,27 @@ class kelas extends Controller
 
     
 }
+/*
+public function kelassiswa($id_kelas) {
+    $kelas = Kelas::find($id_kelas); // Ambil data kelas berdasarkan ID
+    if (!$kelas) {
+        abort(404); // Menangani jika kelas tidak ditemukan
+    }
+    
+    $siswa = $kelas->siswa; // Ambil daftar siswa dari relasi antara kelas dan siswa
+    
+    return view('superadmin.manajemenuser.listsiswa-superadminMU', [
+        'siswa' => $siswa,
+    ]);
+}
+*/
+public function showekskul()
+{
+    // Fetch $guruData from your database or any source
+    $ekstrakurikuler = DB::select('SELECT * FROM ekstrakurikuler');
 
-        
+    return view('/superadmin/daftarekskul-superadmin')->with('ekstrakurikuler', $ekstrakurikuler);
+}       
     }
 
 
