@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wali_siswas', function (Blueprint $table) {
-            $table->integer('ID_Wali')->primary();
+        Schema::create('log_wali_siswas', function (Blueprint $table) {
+            $table->integer('ID_Wali');
             $table->string('Nama_Wali')->length(150);
             $table->integer('ID_Siswa')->length(10);
             $table->string('Pekerjaan_Wali')->length(50);
             $table->string('No_Rek_Bank')->length(50);
             $table->string('Bank_Atas_Nama')->length(50);
-            $table->foreign('ID_Siswa')->references('NISN')->on('siswas')->onDelete('restrict')->onUpdate('cascade');
+            $table->string('Action')->length(6);
+            $table->string('Username')->length(100);
+            $table->timestamp('Waktu');
+           
+            
         });
     }
 
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('wali_siswas');
+        Schema::dropIfExists('log_wali_siswas');
     }
 };

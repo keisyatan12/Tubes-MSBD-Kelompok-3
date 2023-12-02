@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kip_kps_pips', function (Blueprint $table) {
-            $table->integer('ID_Status')->primary();
+        Schema::create('log_kip_kps_pips', function (Blueprint $table) {
+            $table->integer('ID_Status');
             $table->integer('ID_Siswa')->length(10);
             $table->enum('Status_KIP',['ya','tidak']);
             $table->string('No_KIP')->length(30);
@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('No_KPS')->length(30);
             $table->enum('Status_Eligible_PIP',['ya','tidak']);
             $table->string('Alasan_Eligible_PIP')->length(50);
-            $table->foreign('ID_Siswa')->references('NISN')->on('siswas')->onDelete('restrict')->onUpdate('cascade');
+            $table->string('Action')->length(6);
+            $table->string('Username')->length(100);
+            $table->timestamp('Waktu');
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kip_kps_pips');
+        Schema::dropIfExists('log_kip_kps_pips');
     }
 };
