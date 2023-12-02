@@ -35,27 +35,30 @@
             
             <tbody >
                 <tr>
-                    @foreach($siswa as $listsiswa)
-                    <td>{{ $listsiswa->NISN }}</td>
-                    <td>{{ $listsiswa->NIPD }}</td>
-                    <td>{{ $listsiswa->Nama_Siswa }}</td>
-                    <td>{{ $listsiswa->Jenis_Kelamin }}</td>
-                    <td>{{ $listsiswa->Tempat_Lahir }}</td>
-                    <td>{{ $listsiswa->Tanggal_Lahir }}</td>
-                    <td>{{ $listsiswa->Agama }}</td>
-                    <td>{{ $listsiswa->Alamat }}</td>
-                    <td>{{ $listsiswa->No_hp }}</td>
-                    <td>{{ $listsiswa->Status_dlm_Klrg }}</td>
-                    <td>{{ $listsiswa->Nama_Ayah }}</td>
-                    <td>{{ $listsiswa->Nama_Ibu }}</td>
-                    <td>{{ $listsiswa->Pekerjaan_Ayah }}</td>
-                    <td>{{ $listsiswa->Pekerjaan_Ibu }}</td>
-                    <td>{{ $listsiswa->No_Rek_Bank }}</td>
-                    <td>{{ $listsiswa->Bank_Atas_Nama }}</td>
-                    <td>{{ $listsiswa->Status_Siswa }}</td>
-                    <td>{{ $listsiswa->Sekolah_Asal }}</td>
+                   
+                    <td>{{ $siswa->NISN }}</td>
+                    <td>{{ $siswa->NIPD }}</td>
+                    <td>{{ $siswa->Nama_Siswa }}</td>
+                    <td>{{ $siswa->Jenis_Kelamin }}</td>
+                    <td>{{ $siswa->Tempat_Lahir }}</td>
+                    <td>{{ $siswa->Tanggal_Lahir }}</td>
+                    <td>{{ $siswa->Agama }}</td>
+                    <td>{{ $siswa->Alamat }}</td>
+                    <td>{{ $siswa->No_hp }}</td>
+                    <td>{{ $siswa->Status_dlm_Klrg }}</td>
+                    <td>{{ $siswa->Nama_Ayah }}</td>
+                    <td>{{ $siswa->Nama_Ibu }}</td>
+                    <td>{{ $siswa->Pekerjaan_Ayah }}</td>
+                    <td>{{ $siswa->Pekerjaan_Ibu }}</td>
+                    <td>{{ $siswa->No_Rek_Bank }}</td>
+                    <td>{{ $siswa->Bank_Atas_Nama }}</td>
+                    <td>{{ $siswa->Status_Siswa }}</td>
+                    <td>{{ $siswa->Sekolah_Asal }}</td>
+                    
+               
+                
                 </tr>
-                @endforeach
+            
       
       
             

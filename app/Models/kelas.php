@@ -7,9 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class kelas extends Model
 {
-    
     use HasFactory;
-    protected $kelas = 'kelas';
-   
 }
-

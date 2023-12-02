@@ -9,7 +9,7 @@
                         <div class="col-lg-6 mb-4" style="text-align: left; align-self: center;">
                         <!-- Profil Sekilas Guru -->
                         <div class="card-guru mb-3"  >
-                                <h5 class="card-header" style="text-align: center; color: #ffc527;">Profil kepala Sekolah</h5>
+                                <h5 class="card-header" style="text-align: center; color: #ffc527;">Profil Kepala Sekolah</h5>
                             <div class="row g-0 px-4 py-4" style="width: 600px;">
                               <div class="col-md-3">
                                 <img src="https://i.pinimg.com/originals/ce/8f/20/ce8f20768089a0002e64739a9458dc45.jpg" class="img-fluid rounded" alt="...">
@@ -20,12 +20,14 @@
                                     <div class="col-4" style="font-weight: bolder;">
                                         <div>NAMA</div>
                                         <div>NUPTK</div>
-                                        <div>Pelajaran </div>
+                                        <div>Status </div>
                                     </div>
                                     <div class="col-8">
-                                        <div>SHAFIRA HILMI WAHYUDI</div>
-                                        <div>Yohana Marito Marbun</div>
-                                        <div>Yohana Marito Marbun</div>
+                                      @foreach($kepala_sekolah as $kepsek)
+                                        <div>{{ $kepsek->Nama_Kepsek }}</div>
+                                        <div>{{ $kepsek->ID_Kepsek }}</div>
+                                        <div>{{ $kepsek->Status }}</div>
+                                        @endforeach
                                     </div>
                                   </div>
                                 </div>

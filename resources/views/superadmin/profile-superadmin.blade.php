@@ -9,38 +9,35 @@
       
        <table class="table  mt-4">
        
-             <tr>
-               <th>Nama</th>
-               <td>Kairi rayosdelsol</td>
-             </tr>    
-             <tr>
-               <th>NUPTK</th>
-               <td>-</td>
-             </tr>
-             <tr>
-               <th>Jenis Kelamin</th>
-               <td>ejfwu</td>
-             </tr>
-             <tr>
-               <th>TMT Kerja</th>
-               <td>jreihnwnlg</td>
-             </tr>
-             <tr>
-                <th>Tempat Lahir</th>
-                <td>jreihnwnlg</td>
-              </tr>
-              <tr>
-                <th>Tanggal Lahir</th>
-                <td>jreihnwnlg</td>
-              </tr>
-              <tr>
-                <th>Jenjang Pendidikan</th>
-                <td>jreihnwwcnlg</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Aktif</td>
-              </tr>
+        <tr>
+          <th>ID_Kepsek</th>
+          <th>Nama_Kepsek</th>
+          <th>Jenjang_Pendidikan</th>
+          <th>Jenis_Kelamin</th>
+          <th>Tempat_Lahir</th>
+          <th>Tanggal_Lahir</th>
+          <th>TMT_Kerja</th>
+          <th>Status</th>
+          
+          
+          
+      </tr>
+  </thead>
+ <tbody>
+      <tr>
+       @foreach($kepala_sekolah as $kepsek)
+       <td>{{ $kepsek->ID_Kepsek}}</td>
+       <td>{{ $kepsek->Nama_Kepsek }}</td>
+       <td>{{ $kepsek->Jenjang_Pendidikan }}</td>
+       <td>{{ $kepsek->Jenis_Kelamin }}</td>
+       <td>{{ $kepsek->Tempat_Lahir }}</td>
+       <td>{{ $kepsek->Tanggal_Lahir }}</td>
+       <td>{{ $kepsek->TMT_Kerja }}</td>
+       <td>{{ $kepsek->Status }}</td>
+       
+       
+      </tr> 
+      @endforeach
    </table>
     </div>
    <!-- <button type="button" class="btn btn-secondary mt-3 mb-3" >Print Jadwal</button> -->

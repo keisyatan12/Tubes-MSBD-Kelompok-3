@@ -21,7 +21,7 @@
         @foreach($kelas as $kelaslist)
         <td>{{ $kelaslist->ID_Kelas }}</td>
         <td>{{ $kelaslist->Nama_Kelas }}</td>
-        <td><a type="button"  href="/listsiswa-superadminMU"  class="btn btn-warning">Lists Siswa</a></td>
+        <td><a type="button"  href="/listsiswa-superadminMU?kelas_id={{ $kelaslist->ID_Kelas }}"  class="btn btn-warning">Lists Siswa</a></td>
        
     </tr>
     @endforeach

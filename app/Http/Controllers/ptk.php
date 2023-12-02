@@ -37,4 +37,22 @@ class ptk extends Controller
 
         return view('superadmin/manajemenuser/detailtu-superadminMU')->with('tu', $tu);
     }
+    
+    public function dashkepsek()
+    {
+        // Fetch $guruData from your database or any source
+        $kepala_sekolah = DB::select('SELECT * FROM kepala_sekolah');
+
+        return view('superadmin/dashboardsuperadmin')->with('kepala_sekolah', $kepala_sekolah);
+    }
+
+
+    public function kepsek()
+    {
+        // Fetch $guruData from your database or any source
+        $kepala_sekolah = DB::select('SELECT * FROM kepala_sekolah');
+
+        return view('superadmin/profile-superadmin')->with('kepala_sekolah', $kepala_sekolah);
+    }
+
 }

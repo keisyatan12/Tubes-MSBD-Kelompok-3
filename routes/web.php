@@ -5,7 +5,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\Kelas;
-use App\Http\Controllers\Siswa;
+use App\Http\Controllers\siswa;
 use App\Http\Controllers\ptk;
 /*
 |--------------------------------------------------------------------------
@@ -329,13 +329,38 @@ Route::get('/log_ekskul_siswa', [LogController::class, 'ekskul_siswa']);
 Route::get('/log_ekskul', [LogController::class, 'ekskul']);
 Route::get('/log_guru', [LogController::class, 'guru']);
 Route::get('/log_jadwal_mapel', [LogController::class, 'jadwalmapel']);
+Route::get('/log_kelas', [LogController::class, 'kelas_log']);
+Route::get('/log_kepala_sekolah', [LogController::class, 'kepsek_log']);
+Route::get('/log_mata_pelajaran', [LogController::class, 'mapel_log']);
+Route::get('/log_nilai_ekskul', [LogController::class, 'nilai_ekskul_log']);
+Route::get('/log_nilai', [LogController::class, 'nilai_log']);
+Route::get('/log_prestasi', [LogController::class, 'prestasi_log']);
+Route::get('/log_rapor', [LogController::class, 'rapor_log']);
+Route::get('/log_role_assignment', [LogController::class, 'role_assign_log']);
+Route::get('/log_roles', [LogController::class, 'roles_log']);
 Route::get('/daftarkelassiswa-superadminMU', [Kelas::class, 'index']);
-Route::get('/listsiswa-superadminMU', [Siswa::class, 'index']);
+Route::get('/listsiswa-superadminMU', [siswa::class, 'index']);
 Route::get('/daftarptk-superadminMU', [ptk::class, 'index']);
 Route::get('/daftartu-superadminMU', [ptk::class, 'listtu']);
 Route::get('/detailptk-superadminMU', [ptk::class, 'ptkdetail']);
-Route::get('/detailsiswa-superadminMU', [Siswa::class, 'siswadetail']);
+Route::get('/detailsiswa-superadminMU', [siswa::class, 'siswadetail']);
 Route::get('/detailtu-superadminMU', [ptk::class, 'tudetail']);
+Route::get('/log_siswa', [LogController::class, 'siswalog']);
+Route::get('/log_status_kip_kps_pip', [LogController::class, 'kipkpspiplog']);
+Route::get('/log_wali_siswa', [LogController::class, 'walisiswalog']);
+Route::get('/log_tata_usaha', [LogController::class, 'tatausahalog']);
+
+Route::get('/superadmin/daftarekskul-superadmin', [Kelas::class, 'showekskul']);
+Route::get('/dashboardsuperadmin', [ptk::class, 'dashkepsek']);
+Route::get('/superadmin/profile-superadmin', [ptk::class, 'kepsek']);
+/*
+Route::get('/listsiswa-superadminMU/{id_kelas}', [Kelas::class, 'kelassiswa'])->name('daftar-siswa');
+
+Route::get('/listsiswa-superadminMU', 'siswa@showByKelas')->name('siswa.byKelas');
+*/
+Route::get('/listsiswa-superadminMU', [siswa::class, 'showByKelas'])->name('siswa.byKelas');
+Route::get('/detailsiswa-superadminMU', [siswa::class, 'showSiswa'])->name('siswa.byID');
+
 
 Route::get('/tambahkelas-superadminMU', [Kelas::class, 'tambahkelas']); // Ganti 'KelasController@tambah' sesuai dengan method yang kamu gunakan di Controller.
 
@@ -346,25 +371,6 @@ Route::get('/log_absensi_ekskul', function () {
 });
 */
 
-Route::get('/log_guru_superadmin', function () {
-    return view('superadmin/log/log_guru_superadmin');
-});
-
-Route::get('/log_permission_superadmin', function () {
-    return view('superadmin/log/log_permission_superadmin');
-});
-
-Route::get('/log_profile_superadmin', function () {
-    return view('superadmin/log/log_profile_superadmin');
-});
-
-Route::get('/log_role_superadmin', function () {
-    return view('superadmin/log/log_role_superadmin');
-});
-
-Route::get('/log_user_superadmin', function () {
-    return view('superadmin/log/log_user_superadmin');
-});
 
 Route::get('/profile-superadmin', function () {
     return view('superadmin/profile-superadmin');

@@ -15,50 +15,24 @@
            <th scope="col">WAKTU MULAI</th>
            <th scope="col">WAKTU SELESAI</th>
            <th scope="col">AKSI</th>
-         </tr>
-       </thead>
-       
-       <tbody >
-         <tr>
-           <th scope="row">PST</th>
-           <td>Pencak Silat</td>
-           <td>Syahputra Efendi</td>
-           <td>Selasa</td>
-           <td>14:30:00</td>
-           <td>17:00:00</td>
-           <td><a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-file-pen" style="color: #ffffff;"></i></a>
-             <a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></a></td>         
-         </tr>
-         <tr>
-             <th scope="row">PRK</th>
-             <td>Pramuka</td>
-             <td>Siti Aminah</td>
-             <td>Jumat</td>
-             <td>15:00:00</td>
-             <td>17:00:00</td>
+          </tr>
+        </thead>
+       <tbody>
+            <tr>
+             @foreach($ekstrakurikuler as $ekskul)
+             <td>{{ $ekskul->Kode_Ekskul}}</td>
+             <td>{{ $ekskul->Nama_Ekskul }}</td>
+             <td>{{ $ekskul->Guru_Ekskul }}</td>
+             <td>{{ $ekskul->Hari }}</td>
+             <td>{{ $ekskul->Waktu_Mulai }}</td>
+             <td>{{ $ekskul->Waktu_Selesai }}</td>
              <td><a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-file-pen" style="color: #ffffff;"></i></a>
-                 <a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></a></td>
-         </tr>
-         <tr>
-             <th scope="row">FSL</th>
-             <td>Futsal</td>
-             <td>Muhammad Haris</td>
-             <td>Sabtu</td>
-             <td>15:30:00</td>
-             <td>17:00:00</td>
-                 <td><a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-file-pen" style="color: #ffffff;"></i></a>
-                     <a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></a></td>
-         </tr>
-         <tr>
-             <th scope="row">MNR</th>
-             <td>Menari</td>
-             <td>Herlia Puspita Dewi</td>
-             <td>Rabu</td>
-             <td>15:00:00</td>
-             <td>16:00:00</td>
-                 <td><a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-file-pen" style="color: #ffffff;"></i></a>
-                     <a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></a></td>
-         </tr>
+              <a type="button" href="" class="btn btn-warning" ><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></a></td>
+             
+             
+            </tr> 
+            @endforeach
+             
        </tbody>
      </table>
      </div> 
