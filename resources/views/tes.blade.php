@@ -1,0 +1,1 @@
+{{ $siswa->absensi_kelas-> }}
