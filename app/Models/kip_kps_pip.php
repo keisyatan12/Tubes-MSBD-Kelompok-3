@@ -22,7 +22,7 @@ class kip_kps_pip extends Model
     ];
 
     /**
-     * Get the siswa that owns the kepala_sekolah
+     * Get the siswa that owns the kip_kps_pip
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

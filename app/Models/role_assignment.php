@@ -17,7 +17,7 @@ class role_assignment extends Model
         'Kepsek_ID',
     ];
     /**
-     * Get the user that owns the role_assignment
+     * Get the kepala_sekolah that owns the role_assignment
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -26,7 +26,7 @@ class role_assignment extends Model
         return $this->belongsTo(kepala_sekolah::class, 'Kepsek_ID', 'ID_Kepsek');
     }
     /**
-     * Get the user that owns the role_assignment
+     * Get the Guru that owns the role_assignment
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -35,7 +35,7 @@ class role_assignment extends Model
         return $this->belongsTo(gurus::class, 'NUPTK_Guru', 'NUPTK');
     }
     /**
-     * Get the user that owns the role_assignment
+     * Get the tata_usaha that owns the role_assignment
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -44,7 +44,7 @@ class role_assignment extends Model
         return $this->belongsTo(tata_usaha::class, 'Pegawai_ID', 'ID_Pegawai');
     }
     /**
-     * Get the user that owns the role_assignment
+     * Get the role that owns the role_assignment
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -53,7 +53,7 @@ class role_assignment extends Model
         return $this->belongsTo(role::class, 'Role_ID', 'ID_Roles');
     }
     /**
-     * Get the user that owns the role_assignment
+     * Get the siswa that owns the role_assignment
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

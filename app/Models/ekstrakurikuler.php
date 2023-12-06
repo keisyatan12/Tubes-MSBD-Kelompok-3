@@ -29,7 +29,7 @@ class ekstrakurikuler extends Model
     }
 
     /**
-     * Get the user that owns the ekstrakurikuler
+     * Get the guru that owns the ekstrakurikuler
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

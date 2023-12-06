@@ -31,13 +31,13 @@ class absensi_kelas extends Model
     }
 
     /**
-     * Get the user that owns the absensi_kelas
+     * Get the siswa that owns the absensi_kelas
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Siswa(): BelongsTo
+    public function siswa(): BelongsTo
     {
-        return $this->belongsTo(Siswa::class, 'Siswa_ID', 'NISN');
+        return $this->belongsTo(siswa::class, 'Siswa_ID', 'NISN');
     }
     /**
      * Get all of the rapor for the absensi_kelas

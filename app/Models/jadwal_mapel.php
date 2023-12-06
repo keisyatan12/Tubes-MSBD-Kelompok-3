@@ -31,7 +31,7 @@ class jadwal_mapel extends Model
     }
 
     /**
-     * Get the matapelajaran that owns the jadwal_mapel
+     * Get the mata_pelajaran that owns the jadwal_mapel
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
