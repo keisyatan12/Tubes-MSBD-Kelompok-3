@@ -21,7 +21,7 @@ class absensi_ekskul extends Model
     ];
 
     /**
-     * Get the user that owns the absensi_ekskul
+     * Get the ekskul_siswa that owns the absensi_ekskul
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

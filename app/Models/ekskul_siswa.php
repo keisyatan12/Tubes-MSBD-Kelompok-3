@@ -37,7 +37,7 @@ class ekskul_siswa extends Model
     }
 
     /**
-     * Get the user that owns the ekskul_siswa
+     * Get the siswa that owns the ekskul_siswa
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -47,7 +47,7 @@ class ekskul_siswa extends Model
     }
 
     /**
-     * Get the user that owns the ekskul_siswa
+     * Get the tahun_ajaran that owns the ekskul_siswa
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
