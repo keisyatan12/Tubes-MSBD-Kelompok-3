@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('Jenis_Kelamin', ['L','P']);
             $table->string('Tempat_Lahir')->length(100);
             $table->date('Tanggal_Lahir');
-            $table->enum('Agama', ['Kristen', 'Katholik', 'Hindu', 'Buddha','Konghucu']);
+            $table->enum('Agama', ['Islam','Kristen', 'Katholik', 'Hindu', 'Buddha','Konghucu']);
             $table->string('Alamat')->length(255);
             $table->string('No_hp')->length(13);
             $table->enum('Status_dlm_Klrg', ['Anak Kandung','Anak Tiri']);

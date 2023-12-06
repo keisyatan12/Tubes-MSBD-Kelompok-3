@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+       
+
         Schema::create('roles', function (Blueprint $table) {
             $table->bigInteger('ID_Roles')->length(20)->primary();
-            $table->string('Email')->length(150);
-            $table->string('Password')->length(60);
-            $table->enum('Nama_Role',['Kepala Sekolah','Siswa', 'Guru','Tata Usaha']);
-           
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password')->length(60);
+            $table->enum('role', ['Kepala Sekolah', 'Guru', 'Tata Usaha', 'Siswa']);
+            
         });
     }
 

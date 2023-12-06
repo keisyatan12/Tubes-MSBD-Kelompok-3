@@ -281,7 +281,9 @@
           </tr>  
        </tbody>
      </table>
-      <button><a target="_blank" href="/cetak.blade.php">CETAK</a></button>
+      <script type="text/javascript">
+      window.print();
+      </script>
    
    <!-- <button type="button" class="btn btn-secondary mt-3 mb-3" ><i
      class="fas fa-download fa-sm text-white-50"></i> Print Rapor </button> -->

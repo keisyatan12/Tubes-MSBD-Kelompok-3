@@ -7,6 +7,17 @@ use App\Http\Controllers\LogController;
 use App\Http\Controllers\Kelas;
 use App\Http\Controllers\siswa;
 use App\Http\Controllers\ptk;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\KepalaSekolahController;
+use App\Http\Controllers\UserController;
+use App\Http\Middleware\CekLevel;
+
+
+
+Route::get('/superadmin/create_post', [KepalaSekolahController::class,'create_post']);
+Route::post('/superadmin/store_post', [KepalaSekolahController::class,'store_post']);
+Route::get('/superadmin/daftarmapel-superadminMP', [KepalaSekolahController::class,'show_mapel']);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +34,20 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
-//login
+
+//Login
+/*
+Route::get('/login', [UserController::class, 'loginpage'])->name('loginpage')->middleware('guest');
+Route::post('/login', [UserController::class, 'authenticate']);
+Route::post('/logout', [UserController::class, 'logout']);
+Route::get('/konfirmasi-email', [LoginController::class, 'konMail']);
+Route::post('/konfirmasi-email', [LoginController::class, 'konMailLogic']);
+Route::get('/reset-password', [LoginController::class, 'resetPass']);
+Route::put('/reset-password', [LoginController::class, 'resetPassLogic']);
+*/
+
+
+ 
 Route::get('/login', function () {
     return view('login/loginpage');
 });
@@ -204,9 +228,15 @@ Route::get('/editprofile-admin', function () {
 });
 
 //superadmin
-Route::get('/dashboardsuperadmin', function () {
+Route::middleware([CekLevel::class])->group(function () {
+    Route::get('/dashboardsuperadmin', function () {
     return view('superadmin/dashboardsuperadmin');
+    })->middleware('Kepala Sekolah');
 });
+/*
+Route::get('/dashboardsuperadmin', [KepalaSekolahController::class, 'index'])->middleware('Kepala Sekolah');
+*/
+
 /*
 Route::get('/daftarkelassiswa-superadminMU', function () {
     return view('superadmin/manajemenuser/daftarkelassiswa-superadminMU');
@@ -323,6 +353,10 @@ Route::get('/audit-superadmin', function () {
     return view('superadmin/audit-superadmin');
 });
 
+Route::get('/cetak.blade.php', function () {
+    return view('superadmin/cetak');
+});
+
 Route::get('/log_absensi_ekskul', [LogController::class, 'index']);
 Route::get('/log_absensi_kelas', [LogController::class, 'absen_kelas']);
 Route::get('/log_ekskul_siswa', [LogController::class, 'ekskul_siswa']);
@@ -350,8 +384,12 @@ Route::get('/log_status_kip_kps_pip', [LogController::class, 'kipkpspiplog']);
 Route::get('/log_wali_siswa', [LogController::class, 'walisiswalog']);
 Route::get('/log_tata_usaha', [LogController::class, 'tatausahalog']);
 
+Route::get('/daftarmapel-superadminMP', [KepalaSekolahController::class, 'show_mapel']);
+
+
 Route::get('/superadmin/daftarekskul-superadmin', [Kelas::class, 'showekskul']);
-Route::get('/dashboardsuperadmin', [ptk::class, 'dashkepsek']);
+/*
+Route::get('/dashboardsuperadmin', [ptk::class, 'dashkepsek']); */
 Route::get('/superadmin/profile-superadmin', [ptk::class, 'kepsek']);
 /*
 Route::get('/listsiswa-superadminMU/{id_kelas}', [Kelas::class, 'kelassiswa'])->name('daftar-siswa');

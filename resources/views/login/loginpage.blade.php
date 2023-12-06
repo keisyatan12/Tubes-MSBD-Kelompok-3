@@ -23,19 +23,29 @@
     <div class="limiter">
       <div class="container-login100">
         <div class="wrap-login100">
-          <form class="login100-form validate-form">
+          <form class="login100-form validate-form" method="POST" action="">
+            @csrf
             <span class="login100-form-title p-b-43" style="font-weight: bolder; color: #ff852d;">
-              Masuk ke SIA
+            
             </span>  <br>         
             <div class="wrap-input100 validate-input" data-validate = "" style="height: 60px;">
-              <input class="input100" type="text" name=""  >
+              <input id="email" type="text" name="email" class="form-control form-control-md @error('email') is-invalid @enderror" placeholder="Email" required autocomplete="email" autofocus> 
               <span class="focus-input100"></span>
-              <span class="label-input100">NISN/NUPTK</span>
-            </div>         
+              @error('email')
+                  <div class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                  </div>
+            @enderror 
+            </div>     
+               
             <div class="wrap-input100 validate-input" data-validate="Password is required" style="height: 60px;">
-              <input class="input100" type="password" name="pass">
+              <input id="password" type="password" name="password" class="form-control form-control-md @error('password') is-invalid @enderror" placeholder="Password" required autocomplete="current-password" autofocus>
               <span class="focus-input100"></span>
-              <span class="label-input100">Password</span>
+              @error('password')
+                    <div class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                    </div>
+              @enderror
             </div>
             <div class="flex-sb-m w-full p-t-3 p-b-32" >
               <div class="contact100-form-checkbox">

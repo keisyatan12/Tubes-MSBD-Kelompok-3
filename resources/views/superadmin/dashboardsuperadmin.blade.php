@@ -3,7 +3,7 @@
 @section('container')
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bolder;">Dashboard</h1></div>
+                        <h1 class="h3 mb-0 text-gray-800" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bolder;">Dashboard {{ Auth::user()->name }}</h1></div>
                         
                         <div class="box">
                         <div class="col-lg-6 mb-4" style="text-align: left; align-self: center;">

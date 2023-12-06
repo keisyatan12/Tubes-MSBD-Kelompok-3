@@ -10,7 +10,7 @@ class LogController extends Controller
     public function index()
     {
         // Fetch $guruData from your database or any source
-        $log_absensi_ekskul = DB::select('SELECT * FROM log_absensi_ekskul');
+        $log_absensi_ekskul = DB::select('SELECT * FROM log_absensi_ekskuls');
 
         return view('superadmin/log/log_absensi_ekskul')->with('log_absensi_ekskul', $log_absensi_ekskul);
     }
@@ -26,7 +26,7 @@ class LogController extends Controller
     public function ekskul_siswa()
     {
         // Fetch $guruData from your database or any source
-        $log_ekskul_siswa = DB::select('SELECT * FROM log_ekskul_siswa');
+        $log_ekskul_siswa = DB::select('SELECT * FROM log_ekskul_siswas');
 
         return view('superadmin/log/log_ekskul_siswa')->with('log_ekskul_siswa', $log_ekskul_siswa);
     }
@@ -34,7 +34,7 @@ class LogController extends Controller
     public function ekskul()
     {
         // Fetch $guruData from your database or any source
-        $log_ekstrakurikuler = DB::select('SELECT * FROM log_ekstrakurikuler');
+        $log_ekstrakurikuler = DB::select('SELECT * FROM log_ekstrakurikulers');
 
         return view('superadmin/log/log_ekskul')->with('log_ekstrakurikuler', $log_ekstrakurikuler);
     }
@@ -42,7 +42,7 @@ class LogController extends Controller
     public function guru()
     {
         // Fetch $guruData from your database or any source
-        $log_guru = DB::select('SELECT * FROM log_guru');
+        $log_guru = DB::select('SELECT * FROM log_gurus');
 
         return view('superadmin/log/log_guru')->with('log_guru', $log_guru);
     }
@@ -58,7 +58,7 @@ class LogController extends Controller
     public function jadwalmapel()
     {
         // Fetch $guruData from your database or any source
-        $log_jadwal_mapel = DB::select('SELECT * FROM log_jadwal_mapel');
+        $log_jadwal_mapel = DB::select('SELECT * FROM log_jadwal_mapels');
 
         return view('superadmin/log/log_jadwal_mapel')->with('log_jadwal_mapel', $log_jadwal_mapel);
     }
@@ -66,7 +66,7 @@ class LogController extends Controller
     public function kepsek_log()
     {
         // Fetch $guruData from your database or any source
-        $log_kepala_sekolah = DB::select('SELECT * FROM log_kepala_sekolah');
+        $log_kepala_sekolah = DB::select('SELECT * FROM log_kepala_sekolahs');
 
         return view('superadmin/log/log_kepala_sekolah')->with('log_kepala_sekolah', $log_kepala_sekolah);
     }
@@ -74,7 +74,7 @@ class LogController extends Controller
     public function mapel_log()
     {
         // Fetch $guruData from your database or any source
-        $log_mata_pelajaran = DB::select('SELECT * FROM log_mata_pelajaran');
+        $log_mata_pelajaran = DB::select('SELECT * FROM log_mata_pelajarans');
 
         return view('superadmin/log/log_mata_pelajaran')->with('log_mata_pelajaran', $log_mata_pelajaran);
     }
@@ -82,7 +82,7 @@ class LogController extends Controller
     public function nilai_ekskul_log()
     {
         // Fetch $guruData from your database or any source
-        $log_nilai_ekskul = DB::select('SELECT * FROM log_nilai_ekskul');
+        $log_nilai_ekskul = DB::select('SELECT * FROM log_nilai_ekskuls');
 
         return view('superadmin/log/log_nilai_ekskul')->with('log_nilai_ekskul', $log_nilai_ekskul);
     }
@@ -90,7 +90,7 @@ class LogController extends Controller
     public function nilai_log()
     {
         // Fetch $guruData from your database or any source
-        $log_nilai = DB::select('SELECT * FROM log_nilai');
+        $log_nilai = DB::select('SELECT * FROM log_nilais');
 
         return view('superadmin/log/log_nilai')->with('log_nilai', $log_nilai);
     }
@@ -98,7 +98,7 @@ class LogController extends Controller
     public function prestasi_log()
     {
         // Fetch $guruData from your database or any source
-        $log_prestasi = DB::select('SELECT * FROM log_prestasi');
+        $log_prestasi = DB::select('SELECT * FROM log_prestasis');
 
         return view('superadmin/log/log_prestasi')->with('log_prestasi', $log_prestasi);
     }
@@ -106,7 +106,7 @@ class LogController extends Controller
     public function rapor_log()
     {
         // Fetch $guruData from your database or any source
-        $log_rapor = DB::select('SELECT * FROM log_rapor');
+        $log_rapor = DB::select('SELECT * FROM log_rapors');
 
         return view('superadmin/log/log_rapor')->with('log_rapor', $log_rapor);
     }
@@ -114,7 +114,7 @@ class LogController extends Controller
     public function role_assign_log()
     {
         // Fetch $guruData from your database or any source
-        $log_role_assignment = DB::select('SELECT * FROM log_role_assignment');
+        $log_role_assignment = DB::select('SELECT * FROM log_role_assignments');
 
         return view('superadmin/log/log_role_assignment')->with('log_role_assignment', $log_role_assignment);
     }
@@ -130,7 +130,7 @@ class LogController extends Controller
     public function siswalog()
     {
         // Fetch $guruData from your database or any source
-        $log_siswa = DB::select('SELECT * FROM log_siswa');
+        $log_siswa = DB::select('SELECT * FROM log_siswas');
 
         return view('superadmin/log/log_siswa')->with('log_siswa', $log_siswa);
     }
@@ -138,7 +138,7 @@ class LogController extends Controller
     public function kipkpspiplog()
     {
         // Fetch $guruData from your database or any source
-        $log_status_kip_kps_pip = DB::select('SELECT * FROM log_kip_kps_pip');
+        $log_status_kip_kps_pip = DB::select('SELECT * FROM log_kip_kps_pips');
 
         return view('superadmin/log/log_status_kip_kps_pip')->with('log_status_kip_kps_pip', $log_status_kip_kps_pip);
     }
@@ -146,7 +146,7 @@ class LogController extends Controller
     public function tatausahalog()
     {
         // Fetch $guruData from your database or any source
-        $log_tata_usaha = DB::select('SELECT * FROM log_tata_usaha');
+        $log_tata_usaha = DB::select('SELECT * FROM log_tata_usahas');
 
         return view('superadmin/log/log_tata_usaha')->with('log_tata_usaha', $log_tata_usaha);
     }
@@ -154,7 +154,7 @@ class LogController extends Controller
     public function walisiswalog()
     {
         // Fetch $guruData from your database or any source
-        $log_wali_siswa = DB::select('SELECT * FROM log_wali_siswa');
+        $log_wali_siswa = DB::select('SELECT * FROM log_wali_siswas');
 
         return view('superadmin/log/log_wali_siswa')->with('log_wali_siswa', $log_wali_siswa);
     }

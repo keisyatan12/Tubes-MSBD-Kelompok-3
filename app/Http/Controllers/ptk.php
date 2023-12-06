@@ -9,7 +9,7 @@ class ptk extends Controller
     public function index()
     {
         // Fetch $guruData from your database or any source
-        $ptk = DB::select('SELECT * FROM guru');
+        $ptk = DB::select('SELECT * FROM guruses');
 
         return view('superadmin/manajemenuser/daftarptk-superadminMU')->with('ptk', $ptk);
     }
@@ -17,7 +17,7 @@ class ptk extends Controller
     public function listtu()
     {
         // Fetch $guruData from your database or any source
-        $tu = DB::select('SELECT * FROM tata_usaha');
+        $tu = DB::select('SELECT * FROM tata_usahas');
 
         return view('superadmin/manajemenuser/daftartu-superadminMU')->with('tu', $tu);
     }
@@ -25,7 +25,7 @@ class ptk extends Controller
     public function ptkdetail()
     {
         // Fetch $guruData from your database or any source
-        $ptk = DB::select('SELECT * FROM guru');
+        $ptk = DB::select('SELECT * FROM guruses');
 
         return view('superadmin/manajemenuser/detailptk-superadminMU')->with('ptk', $ptk);
     }
@@ -33,7 +33,7 @@ class ptk extends Controller
     public function tudetail()
     {
         // Fetch $guruData from your database or any source
-        $tu = DB::select('SELECT * FROM tata_usaha');
+        $tu = DB::select('SELECT * FROM tata_usahas');
 
         return view('superadmin/manajemenuser/detailtu-superadminMU')->with('tu', $tu);
     }
@@ -41,7 +41,7 @@ class ptk extends Controller
     public function dashkepsek()
     {
         // Fetch $guruData from your database or any source
-        $kepala_sekolah = DB::select('SELECT * FROM kepala_sekolah');
+        $kepala_sekolah = DB::select('SELECT * FROM kepala_sekolahs');
 
         return view('superadmin/dashboardsuperadmin')->with('kepala_sekolah', $kepala_sekolah);
     }
@@ -50,7 +50,7 @@ class ptk extends Controller
     public function kepsek()
     {
         // Fetch $guruData from your database or any source
-        $kepala_sekolah = DB::select('SELECT * FROM kepala_sekolah');
+        $kepala_sekolah = DB::select('SELECT * FROM kepala_sekolahs');
 
         return view('superadmin/profile-superadmin')->with('kepala_sekolah', $kepala_sekolah);
     }
