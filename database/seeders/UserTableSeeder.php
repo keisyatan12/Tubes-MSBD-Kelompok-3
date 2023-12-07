@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Superadmin',
             'email' => 'keisyaa012@gmail.com',
             'password' => Hash::make('123456'),
-            'role' => 'Kepala Sekolah',
+            'nama_role' => 'Kepala Sekolah',
         ]);
 
         // User Admin
@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Guru',
             'email' => 'divaanggreiniharahap@gmail.com',
             'password' => Hash::make('123456'),
-            'role' => 'Guru',
+            'nama_role' => 'Guru',
         ]);
 
         // User Biasa
@@ -36,7 +36,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Tata Usaha',
             'email' => 'naufalfauzanst@gmail.com',
             'password' => Hash::make('123456'),
-            'role' => 'Tata Usaha',
+            'nama_role' => 'Tata Usaha',
         ]);
 
          // User Biasa
@@ -44,7 +44,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Siswa',
             'email' => 'keisyaa.tan@gmail.com',
             'password' => Hash::make('123456'),
-            'role' => 'Siswa',
+            'nama_role' => 'Siswa',
         ]);
     }
 }

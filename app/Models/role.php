@@ -14,7 +14,8 @@ class role extends Model
     protected $fillable = [
         'Email',
         'Password',
-        'Nama_Role',
+        'name',
+        'role',
     ];
     public function role_assignment(): HasMany
     {

@@ -16,8 +16,8 @@ return new class extends Migration
         AFTER INSERT ON roles
         FOR EACH ROW
         BEGIN
-        INSERT INTO log_roles(ID_Roles, Email, Password, role, Action, Username, Waktu)
-        VALUES (new.ID_Roles, new.Email, new.Password, new.role, "Insert", "CURRENT_USER()", NOW());
+        INSERT INTO log_roles(ID_Roles, Email, Password, nama_role, Action, Username, Waktu)
+        VALUES (new.ID_Roles, new.Email, new.Password, new.nama_role, "Insert", "CURRENT_USER()", NOW());
         END
         ');
 

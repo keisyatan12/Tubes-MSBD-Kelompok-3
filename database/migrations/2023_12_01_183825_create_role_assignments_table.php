@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('role_assignments', function (Blueprint $table) {
             $table->integer('ID_Role_Assignment')->primary();
-            $table->bigInteger('Role_ID')->length(20);
+            $table->unsignedBigInteger('Role_ID')->length(20);
             $table->integer('Siswa_ID')->length(10);
             $table->bigInteger('NUPTK_Guru');
             $table->bigInteger('Pegawai_ID')->length(20);
