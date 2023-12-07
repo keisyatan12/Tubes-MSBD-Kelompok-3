@@ -14,12 +14,12 @@ return new class extends Migration
        
 
         Schema::create('roles', function (Blueprint $table) {
-            $table->bigInteger('ID_Roles')->length(20)->primary();
+            $table->bigIncrements('ID_Roles')->length(20);
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->length(60);
-            $table->enum('role', ['Kepala Sekolah', 'Guru', 'Tata Usaha', 'Siswa']);
+            $table->enum('nama_role', ['Kepala Sekolah', 'Guru', 'Tata Usaha', 'Siswa']);
             
         });
     }
