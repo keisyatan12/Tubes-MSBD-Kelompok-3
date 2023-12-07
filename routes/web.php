@@ -48,9 +48,9 @@ Route::put('/reset-password', [LoginController::class, 'resetPassLogic']);
 
 
  
-Route::get('/login', function () {
-    return view('login/loginpage');
-});
+
+Route::get('/login', [UserController::class, 'loginpage'])->name('login.page');
+Route::post('/login', [UserController::class, 'login'])->name('login');
 
 Route::get('/forgot', function () {
     return view('login/forgotpassword');
